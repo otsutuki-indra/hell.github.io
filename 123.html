@@ -3,15 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ʜᴇʟʟ ᴄᴏʀᴘ — WE BUILD WHAT OTHERS FEAR</title>
+<title>ʜᴇʟʟ ᴄᴏʀᴘ — ᴡᴇ ʙᴜɪʟᴅ ᴡʜᴀᴛ ᴏᴛʜᴇʀꜱ ꜰᴇᴀʀ</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Share+Tech+Mono&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --hell-red: #FF0022;
-    --hell-orange: #FF4500;
     --ash: #1A1A1A;
     --void: #0A0A0A;
-    --smoke: #2D2D2D;
     --white: #F0EDE8;
     --dim: #888888;
     --glow: rgba(255,0,34,0.5);
@@ -26,7 +24,7 @@
     overflow-x: hidden;
   }
 
-  /* 🔥 FIXED & LIGHT CURSOR */
+  /* SMOOTH CURSOR */
   .cursor {
     position: fixed;
     width: 12px; height: 12px;
@@ -51,7 +49,7 @@
     transition: all 0.2s ease;
   }
 
-  /* LIGHT NOISE + SCANLINES */
+  /* LIGHT BACKGROUND */
   body::before {
     content: '';
     position: fixed;
@@ -103,7 +101,6 @@
     color: var(--dim);
     text-decoration: none;
     text-transform: uppercase;
-    transition: color 0.3s;
   }
   .nav-links a:hover { color: var(--hell-red); }
 
@@ -123,7 +120,7 @@
     color: var(--void);
   }
 
-  /* HERO - Reduced Animations */
+  /* HERO */
   .hero {
     min-height: 100vh;
     display: flex;
@@ -148,8 +145,8 @@
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
   }
-  .hero-content { position: relative; z-index: 10; text-align: center; max-width: 1000px; }
 
+  .hero-content { position: relative; z-index: 10; text-align: center; max-width: 1000px; }
   .hero-tag { font-family: 'Share Tech Mono', monospace; font-size: 0.7rem; letter-spacing: 0.4em; color: var(--hell-red); margin-bottom: 24px; }
   .hero-title {
     font-family: 'Bebas Neue', sans-serif;
@@ -159,7 +156,6 @@
     color: var(--white);
   }
   .hero-title .red { color: var(--hell-red); }
-
   .hero-sub {
     font-size: 1.1rem;
     font-weight: 300;
@@ -168,7 +164,6 @@
     margin-top: 32px;
     line-height: 1.8;
   }
-
   .hero-btns {
     display: flex;
     gap: 20px;
@@ -181,7 +176,6 @@
     letter-spacing: 0.2em;
     text-transform: uppercase;
     padding: 16px 40px;
-    cursor: none;
     transition: all 0.3s;
   }
   .btn-primary {
@@ -195,7 +189,7 @@
     border: 1px solid rgba(240,237,232,0.3);
   }
 
-  /* PARTICLES - Reduced */
+  /* PARTICLES - লাইট */
   .particles { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
   .particle {
     position: absolute;
@@ -206,18 +200,183 @@
     animation: rise 12s linear infinite;
   }
   @keyframes rise {
-    0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+    0% { transform: translateY(100vh); opacity: 0; }
     10% { opacity: 0.8; }
     90% { opacity: 0.8; }
-    100% { transform: translateY(-150px) translateX(30px); opacity: 0; }
+    100% { transform: translateY(-150px); opacity: 0; }
   }
 
-  /* SERVICES, ABOUT, etc. - Keep same but lighter hover */
-  .service-card:hover, .project-card:hover {
-    transform: translateY(-3px);
+  /* STATS */
+  .stats {
+    border-top: 1px solid rgba(255,0,34,0.15);
+    border-bottom: 1px solid rgba(255,0,34,0.15);
+    background: rgba(20,20,20,0.8);
+    padding: 30px 60px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .stat { text-align: center; padding: 0 40px; border-right: 1px solid rgba(255,0,34,0.1); }
+  .stat:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem;
+    color: var(--hell-red);
+  }
+  .stat-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    color: var(--dim);
+    text-transform: uppercase;
   }
 
-  /* Other sections remain same (only removed heavy animations) */
+  /* SERVICES */
+  .section { padding: 120px 60px; position: relative; }
+  .section-header { margin-bottom: 80px; }
+  .section-tag {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.4em;
+    color: var(--hell-red);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 6vw, 6rem);
+    line-height: 1;
+    letter-spacing: 0.03em;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+  .service-card {
+    background: var(--ash);
+    padding: 50px 40px;
+    transition: all 0.4s;
+  }
+  .service-card:hover {
+    transform: translateY(-4px);
+    background: #222;
+  }
+  .service-icon { font-size: 2.5rem; margin-bottom: 24px; }
+  .service-num { font-family: 'Share Tech Mono', monospace; font-size: 0.65rem; letter-spacing: 0.3em; color: var(--hell-red); margin-bottom: 16px; }
+  .service-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; margin-bottom: 16px; }
+  .service-desc { font-size: 0.95rem; color: var(--dim); line-height: 1.7; }
+
+  /* ABOUT */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+  }
+  .about-visual { position: relative; height: 500px; }
+  .about-box {
+    position: absolute;
+    border: 1px solid rgba(255,0,34,0.3);
+    background: rgba(255,0,34,0.03);
+  }
+  .about-box-1 { inset: 0; }
+  .about-box-2 { inset: 30px; }
+  .about-box-3 { inset: 60px; }
+  .hell-symbol {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 8rem;
+    color: var(--hell-red);
+  }
+  .about-text p { font-size: 1rem; color: rgba(240,237,232,0.7); line-height: 1.9; margin-bottom: 24px; }
+
+  /* PROJECTS */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+  }
+  .project-card {
+    position: relative;
+    height: 380px;
+    overflow: hidden;
+    background: var(--ash);
+  }
+  .project-card:first-child { grid-row: span 2; height: auto; }
+  .project-bg {
+    position: absolute;
+    inset: 0;
+    transition: transform 0.6s ease;
+  }
+  .project-card:hover .project-bg { transform: scale(1.05); }
+  .project-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 60%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 40px;
+  }
+  .project-cat { font-family: 'Share Tech Mono', monospace; font-size: 0.65rem; letter-spacing: 0.3em; color: var(--hell-red); }
+  .project-name { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; margin-bottom: 12px; }
+
+  /* PROCESS */
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+  .process-step { padding: 0 30px; text-align: center; }
+  .step-num {
+    width: 80px; height: 80px;
+    border: 1px solid rgba(255,0,34,0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 32px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    color: var(--hell-red);
+  }
+
+  /* CONTACT */
+  .contact-section {
+    background: var(--ash);
+    padding: 120px 60px;
+  }
+  .contact-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+  }
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .form-input, .form-textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255,0,34,0.2);
+    color: var(--white);
+    font-size: 1rem;
+    padding: 16px 0;
+  }
+  .form-input:focus, .form-textarea:focus { border-bottom-color: var(--hell-red); }
+  .form-textarea { height: 120px; resize: none; }
+
+  /* FOOTER */
+  footer {
+    background: var(--void);
+    border-top: 1px solid rgba(255,0,34,0.1);
+    padding: 40px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; color: var(--hell-red); }
 </style>
 </head>
 <body>
@@ -242,16 +401,15 @@
 <div class="particles" id="particles"></div>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" id="home">
   <div class="grid-bg"></div>
   <div class="hero-glow"></div>
- 
   <div class="hero-content">
     <div class="hero-tag">// EST. 2019 — DIGITAL WARFARE DIVISION</div>
     <h1 class="hero-title">
-      <span>WE BUILD</span><br>
+      WE BUILD<br>
       <span class="red">WHAT OTHERS</span><br>
-      <span>FEAR</span>
+      FEAR
     </h1>
     <p class="hero-sub">Hellcorp engineers the impossible. Bleeding-edge tech solutions forged in the fires of innovation.</p>
     <div class="hero-btns">
@@ -261,11 +419,127 @@
   </div>
 </section>
 
-<!-- Rest of your HTML remains exactly the same (from STATS to FOOTER) -->
-<!-- Just paste your original sections below this point -->
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><span class="stat-num" data-target="340">0</span><span class="stat-label">// Projects Delivered</span></div>
+  <div class="stat"><span class="stat-num" data-target="98">0</span><span class="stat-label">// Client Retention %</span></div>
+  <div class="stat"><span class="stat-num" data-target="47">0</span><span class="stat-label">// Team Members</span></div>
+  <div class="stat"><span class="stat-num" data-target="12">0</span><span class="stat-label">// Countries Conquered</span></div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="section-header">
+    <div class="section-tag">Our Arsenal</div>
+    <h2 class="section-title">WHAT WE<br><span style="color:var(--hell-red)">UNLEASH</span></h2>
+  </div>
+  <div class="services-grid">
+    <div class="service-card"><span class="service-icon">🔥</span><div class="service-num">01 —</div><div class="service-title">AI & Machine Learning</div><p class="service-desc">Neural architectures that learn, adapt, and dominate.</p></div>
+    <div class="service-card"><span class="service-icon">🛡️</span><div class="service-num">02 —</div><div class="service-title">Cybersecurity</div><p class="service-desc">Zero-trust frameworks and threat protection.</p></div>
+    <div class="service-card"><span class="service-icon">⛓️</span><div class="service-num">03 —</div><div class="service-title">Blockchain & Web3</div><p class="service-desc">Smart contracts and unstoppable DeFi protocols.</p></div>
+    <div class="service-card"><span class="service-icon">☁️</span><div class="service-num">04 —</div><div class="service-title">Cloud Architecture</div><p class="service-desc">Multi-cloud infrastructure with 99.99% uptime.</p></div>
+    <div class="service-card"><span class="service-icon">💀</span><div class="service-num">05 —</div><div class="service-title">Dark UX / Product Design</div><p class="service-desc">Conversion-obsessed design with psychology.</p></div>
+    <div class="service-card"><span class="service-icon">✔</span><div class="service-num">06 —</div><div class="service-title">Data Engineering</div><p class="service-desc">Petabyte-scale pipelines and real-time analytics.</p></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about" style="background: var(--ash);">
+  <div class="about-grid">
+    <div class="about-visual">
+      <div class="about-box about-box-1"></div>
+      <div class="about-box about-box-2"></div>
+      <div class="about-box about-box-3"></div>
+      <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;">
+        <div class="hell-symbol">HC</div>
+        <div style="font-family:'Share Tech Mono',monospace;font-size:0.6rem;letter-spacing:0.3em;color:var(--dim);">SINCE 2019</div>
+      </div>
+    </div>
+    <div class="about-text">
+      <div class="section-tag">About Hellcorp</div>
+      <h2 class="section-title" style="font-size:3.5rem;">THE COMPANY<br><span style="color:var(--hell-red)">THAT BURNS</span><br>FOR YOU</h2>
+      <p>Hellcorp was born from frustration with mediocre tech. We deliver only legendary results.</p>
+      <p>We are hackers, engineers and designers who refuse to play safe. Every line of code is built for domination.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section class="section" id="work">
+  <div class="section-header">
+    <div class="section-tag">Case Files</div>
+    <h2 class="section-title">SELECTED<br><span style="color:var(--hell-red)">WORK</span></h2>
+  </div>
+  <div class="projects-grid">
+    <div class="project-card">
+      <div class="project-bg" style="background: linear-gradient(135deg, #1a0005, #3d0010);"></div>
+      <div class="project-overlay">
+        <div class="project-cat">// AI Infrastructure</div>
+        <div class="project-name">PROMETHEUS<br>NEURAL CORE</div>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-bg" style="background: linear-gradient(135deg, #0a0a1a, #1a1a3d);"></div>
+      <div class="project-overlay">
+        <div class="project-cat">// Cybersecurity</div>
+        <div class="project-name">AEGIS SHIELD</div>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-bg" style="background: linear-gradient(135deg, #0a1a0a, #1a3d1a);"></div>
+      <div class="project-overlay">
+        <div class="project-cat">// Blockchain</div>
+        <div class="project-name">VERDANT DAO</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section" id="process">
+  <div class="section-header" style="text-align:center;">
+    <div class="section-tag">How We Operate</div>
+    <h2 class="section-title">THE HELLCORP<br><span style="color:var(--hell-red)">METHOD</span></h2>
+  </div>
+  <div class="process-grid">
+    <div class="process-step"><div class="step-num">01</div><div style="font-size:1.4rem;margin-bottom:8px;">IGNITION</div><p>Brutal clarity on your problem.</p></div>
+    <div class="process-step"><div class="step-num">02</div><div style="font-size:1.4rem;margin-bottom:8px;">FORGE</div><p>Architecture built for scale & security.</p></div>
+    <div class="process-step"><div class="step-num">03</div><div style="font-size:1.4rem;margin-bottom:8px;">INFERNO</div><p>Maximum velocity development.</p></div>
+    <div class="process-step"><div class="step-num">04</div><div style="font-size:1.4rem;margin-bottom:8px;">ASCEND</div><p>Launch, monitor, dominate.</p></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div>
+      <div class="section-tag">Ready to Burn?</div>
+      <h2 class="section-title" style="font-size:4rem;">LET'S<br><span style="color:var(--hell-red)">START</span><br>A FIRE</h2>
+      <p style="color:var(--dim);margin-top:20px;">inferno@hellcorp.io</p>
+    </div>
+    <div class="contact-form">
+      <input type="text" class="form-input" placeholder="Your Name">
+      <input type="email" class="form-input" placeholder="Email Address">
+      <input type="text" class="form-input" placeholder="Project Type">
+      <textarea class="form-textarea" placeholder="Describe Your Vision"></textarea>
+      <button class="btn-primary" style="margin-top:10px;" onclick="this.textContent='SENT ✓';this.style.background='#1a4a1a'">IGNITE →</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">ʜᴇʟʟ ᴄᴏʀᴘ</div>
+  <div style="font-family:'Share Tech Mono',monospace;font-size:0.6rem;letter-spacing:0.2em;color:var(--dim);">© 2026 HELLCORP INC. WE BUILD WHAT OTHERS FEAR.</div>
+  <div style="display:flex;gap:20px;">
+    <a href="#" style="color:var(--dim);text-decoration:none;font-size:0.75rem;">X</a>
+    <a href="#" style="color:var(--dim);text-decoration:none;font-size:0.75rem;">GitHub</a>
+    <a href="#" style="color:var(--dim);text-decoration:none;font-size:0.75rem;">Discord</a>
+  </div>
+</footer>
 
 <script>
-// FIXED FAST CURSOR
+// SMOOTH CURSOR
 const cursor = document.getElementById('cursor');
 const ring = document.getElementById('cursorRing');
 
@@ -276,28 +550,39 @@ document.addEventListener('mousemove', e => {
   ring.style.top = e.clientY + 'px';
 });
 
-document.querySelectorAll('a, button, .service-card, .step-num, .tag, .project-card').forEach(el => {
+document.querySelectorAll('a, button, .service-card, .project-card').forEach(el => {
   el.addEventListener('mouseenter', () => {
     cursor.style.transform = 'translate(-50%, -50%) scale(2.5)';
-    ring.style.borderColor = 'rgba(255,0,34,0.9)';
   });
   el.addEventListener('mouseleave', () => {
     cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-    ring.style.borderColor = 'rgba(255,0,34,0.4)';
   });
 });
 
-// LIGHT PARTICLES (only 15)
+// LIGHT PARTICLES
 const pContainer = document.getElementById('particles');
 for (let i = 0; i < 15; i++) {
   const p = document.createElement('div');
   p.classList.add('particle');
   p.style.left = Math.random() * 100 + '%';
   p.style.animationDuration = (Math.random() * 10 + 8) + 's';
-  p.style.animationDelay = (Math.random() * 8) + 's';
+  p.style.animationDelay = Math.random() * 8 + 's';
   pContainer.appendChild(p);
 }
-</script>
 
+// Counter Animation
+document.querySelectorAll('.stat-num').forEach(el => {
+  const target = parseInt(el.getAttribute('data-target'));
+  let count = 0;
+  const timer = setInterval(() => {
+    count += Math.ceil(target / 50);
+    el.textContent = count;
+    if (count >= target) {
+      el.textContent = target;
+      clearInterval(timer);
+    }
+  }, 40);
+});
+</script>
 </body>
 </html>
